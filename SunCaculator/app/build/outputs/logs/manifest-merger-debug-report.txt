@@ -1,20 +1,17 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
-MERGED from [com.android.support:design:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7cf14391a2ebe899775f30777f15d063/AndroidManifest.xml:17:1-24:12
+ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/2388d682fc86f4272677a5a8cf0ece5f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/tran/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/327fbc35a5ca4b01f1a49a48fa3806a8/AndroidManifest.xml:2:1-11:12
 MERGED from [com.jakewharton:butterknife:8.8.0] /home/tran/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.0.aar/81adb4481934558d0a1e78f9242023e2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.android.support:support-fragment:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/6e4e959a51eb9d1d7bcb8bf5c06cfa8f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/2e0b954e3d01065bb742224a6d29d1f9/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/5a2caa2bfc26f6d499d03d3f9efbc051/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/ce9c0ddd31af182c4b76c594d01be8da/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/1f85e244eaeb0caaa29a933f304c449c/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/e9f57b4832fc4faab8b022cbff0db1ba/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/2fd41aa71a527fb727598bdf44bed0d6/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/8f20dd00460070fc21f82741b66e0d3b/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:viewpager:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/34371b92e95b27af2592e096bcf80b9b/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/fe69fd7fb5752f5f974451f12d76cd0c/AndroidManifest.xml:17:1-22:12
@@ -26,37 +23,34 @@ MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/tran/.gradle/
 MERGED from [com.android.support:support-compat:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/8785cd9609522e5b81dd15620bca6de0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:versionedparcelable:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/f22046e3aebaa757a12d1e656f635742/AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/26e640916ba75f6ddee7b98ac2fe2dc7/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/93a7d5f7a00279ecd357a547ff122320/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/695bdc90b99c10c3d72a8b1fa2de26ce/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:documentfile:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/d73d555d48102dff9dd659cdb0f4a746/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/3f6ab3aa8b976613d917ea941908e4f2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/323e290fb2cadedc076d32424d625628/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9a72a368696b08a1d9dff4c91556beab/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/eceda36bec4805f6aa765980b67b82a5/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/91a686a06da7413faab9b2523be498dd/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/66d1831b4e75dac94cfb6bd4cf9806bb/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/09d893ad0ace43dfcbedfe4c8526e8f4/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
+MERGED from [com.android.support:interpolator:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/eceda36bec4805f6aa765980b67b82a5/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
 	package
 		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:3:5-43
 		INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
 		INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
-		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
+		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
 		INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
-		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-25:12
+		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:1-21:12
 		INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:5:5-23:19
-MERGED from [com.android.support:design:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7cf14391a2ebe899775f30777f15d063/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7cf14391a2ebe899775f30777f15d063/AndroidManifest.xml:22:5-20
+ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:5:5-19:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/tran/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/327fbc35a5ca4b01f1a49a48fa3806a8/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/tran/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/327fbc35a5ca4b01f1a49a48fa3806a8/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-compat:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/8785cd9609522e5b81dd15620bca6de0/AndroidManifest.xml:22:5-94
@@ -77,12 +71,12 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/tran/.gradle/
 		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:6:9-36
 	android:theme
 		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:11:9-40
-activity#com.example.sundemocaculator.ui.main.AnimationActivity
-ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:12:9-19:20
+activity#com.example.sundemocaculator.ui.main.MainActivity
+ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:12:9-18:20
 	android:name
-		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:12:19-60
+		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:12:19-55
 intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.LAUNCHER
-ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:13:13-18:29
+ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:13:13-17:29
 action#android.intent.action.MAIN
 ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:14:17-69
 	android:name
@@ -92,19 +86,13 @@ ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/
 	android:name
 		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:17:17-77
+ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:17:27-74
-activity#com.example.sundemocaculator.ui.main.MainActivity
-ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:20:9-22:20
-	android:name
-		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:20:19-55
+		ADDED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml:16:27-74
 uses-sdk
 INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
 INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:design:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7cf14391a2ebe899775f30777f15d063/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7cf14391a2ebe899775f30777f15d063/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/2388d682fc86f4272677a5a8cf0ece5f/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/2388d682fc86f4272677a5a8cf0ece5f/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/tran/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/327fbc35a5ca4b01f1a49a48fa3806a8/AndroidManifest.xml:5:5-7:41
@@ -115,16 +103,12 @@ MERGED from [com.android.support:support-fragment:28.0.0] /home/tran/.gradle/cac
 MERGED from [com.android.support:support-fragment:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/6e4e959a51eb9d1d7bcb8bf5c06cfa8f/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/2e0b954e3d01065bb742224a6d29d1f9/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/2e0b954e3d01065bb742224a6d29d1f9/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/5a2caa2bfc26f6d499d03d3f9efbc051/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/5a2caa2bfc26f6d499d03d3f9efbc051/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/ce9c0ddd31af182c4b76c594d01be8da/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/ce9c0ddd31af182c4b76c594d01be8da/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/1f85e244eaeb0caaa29a933f304c449c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/1f85e244eaeb0caaa29a933f304c449c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/e9f57b4832fc4faab8b022cbff0db1ba/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/e9f57b4832fc4faab8b022cbff0db1ba/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/2fd41aa71a527fb727598bdf44bed0d6/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/2fd41aa71a527fb727598bdf44bed0d6/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/8f20dd00460070fc21f82741b66e0d3b/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/8f20dd00460070fc21f82741b66e0d3b/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:viewpager:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/34371b92e95b27af2592e096bcf80b9b/AndroidManifest.xml:20:5-44
@@ -147,8 +131,6 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/tran/.gradle/
 MERGED from [com.android.support:versionedparcelable:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/f22046e3aebaa757a12d1e656f635742/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/26e640916ba75f6ddee7b98ac2fe2dc7/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/26e640916ba75f6ddee7b98ac2fe2dc7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/93a7d5f7a00279ecd357a547ff122320/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/93a7d5f7a00279ecd357a547ff122320/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/695bdc90b99c10c3d72a8b1fa2de26ce/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/695bdc90b99c10c3d72a8b1fa2de26ce/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/d73d555d48102dff9dd659cdb0f4a746/AndroidManifest.xml:20:5-44
@@ -159,14 +141,14 @@ MERGED from [com.android.support:print:28.0.0] /home/tran/.gradle/caches/transfo
 MERGED from [com.android.support:print:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/323e290fb2cadedc076d32424d625628/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9a72a368696b08a1d9dff4c91556beab/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9a72a368696b08a1d9dff4c91556beab/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/eceda36bec4805f6aa765980b67b82a5/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/eceda36bec4805f6aa765980b67b82a5/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/91a686a06da7413faab9b2523be498dd/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/91a686a06da7413faab9b2523be498dd/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/66d1831b4e75dac94cfb6bd4cf9806bb/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/66d1831b4e75dac94cfb6bd4cf9806bb/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/09d893ad0ace43dfcbedfe4c8526e8f4/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] /home/tran/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/09d893ad0ace43dfcbedfe4c8526e8f4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/eceda36bec4805f6aa765980b67b82a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/tran/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/eceda36bec4805f6aa765980b67b82a5/AndroidManifest.xml:20:5-44
 INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
 INJECTED from /home/tran/Documents/git-repos/android-projects/SunDemoCaculator/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
