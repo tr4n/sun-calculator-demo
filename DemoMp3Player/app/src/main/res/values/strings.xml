@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DemoMp3Player</string>
+    <string name="item_audio_default_title">You belong to me</string>
+    <string name="item_audio_default_artist">Taylor Swift</string>
+    <string name="channel_name">Background Service</string>
+    <string name="channel_description">Background Service</string>
+</resources>
