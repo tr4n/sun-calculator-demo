@@ -9,10 +9,8 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
-import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.example.demomp3player.R;
@@ -27,8 +25,9 @@ public class PlayAudioService extends Service {
     private static final String TAG = "PlayAudioService";
     private static final String CHANNEL_ID = "com.example.demomp3player";
     private static boolean sIsPlaying = false;
+    private static int sCurrentPosition = 0;
     private MediaPlayer mMediaPlayer;
-    private AudioModel mAudioModel;
+    private static AudioModel sAudio;
 
     public PlayAudioService() {
 
@@ -44,12 +43,33 @@ public class PlayAudioService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        mAudioModel =
-                intent.getExtras().getParcelable(Constant.EXTRA_AUDIO);
-        onSendBroadcastReceiver(mAudioModel);
-        onPlayAudio(mAudioModel);
-        onPushNotification(mAudioModel);
 
+        String action = intent.getExtras().getString(Constant.EXTRA_ACTION);
+        switch (action) {
+            case Constant.ACTION_SEND_AUDIO:
+                AudioModel audioModel =
+                        intent.getExtras().getParcelable(Constant.EXTRA_AUDIO);
+                if (audioModel != null) {
+                    sAudio = audioModel;
+                    onPlayAudio(sAudio);
+                    onPushNotification(sAudio);
+
+                }
+                onSendBroadcastReceiver(sAudio);
+                break;
+            case Constant.ACTION_GET_AUDIO:
+                onSendBroadcastReceiver(sAudio);
+                break;
+            case Constant.ACTION_PLAY:
+                onPlayContinueAudio();
+                break;
+            case Constant.ACTION_PAUSE:
+                onPauseAudio();
+                break;
+            case Constant.ACTION_CANCEL:
+                onDestroy();
+                break;
+        }
 
         return START_NOT_STICKY;
     }
@@ -65,6 +85,7 @@ public class PlayAudioService extends Service {
 
 
         Intent notificationIntent = new Intent(this, AudioListActivity.class);
+        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent =
                 PendingIntent.getActivity(this, 0, notificationIntent, 0);
 
@@ -111,6 +132,19 @@ public class PlayAudioService extends Service {
         }
     }
 
+    private void onPauseAudio() {
+        if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+            mMediaPlayer.pause();
+            sCurrentPosition = mMediaPlayer.getCurrentPosition();
+        }
+    }
+
+    private void onPlayContinueAudio() {
+        if (mMediaPlayer != null) {
+            mMediaPlayer.start();
+            mMediaPlayer.seekTo(sCurrentPosition);
+        }
+    }
 
     private void onCreateNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
@@ -121,6 +155,8 @@ public class PlayAudioService extends Service {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, importance);
             notificationChannel.setDescription(description);
+            notificationChannel.setVibrationPattern(new long[]{ 0 });
+            notificationChannel.enableVibration(true);
             // Register the channel with the system; you can't change the importance
             // or other notification behaviors after this
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
