@@ -1,8 +1,10 @@
 package com.example.demomp3player.ui.screen.audio;
 
 import android.Manifest;
-import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
@@ -106,9 +108,8 @@ public class AudioListActivity extends BaseActivity implements AudioContract.Vie
     public void onItemClicked(AudioModel audioModel) {
         final String message = audioModel.getTitle() + "-" + audioModel.getArtist();
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        onDisplayPlayingAudio(audioModel);
         Intent intent = new Intent(AudioListActivity.this, PlayAudioService.class);
-        intent.putExtra(Constant.AUDIO_MESSAGE, audioModel);
+        intent.putExtra(Constant.EXTRA_AUDIO, audioModel);
         startService(intent);
     }
 
@@ -117,5 +118,23 @@ public class AudioListActivity extends BaseActivity implements AudioContract.Vie
         super.onResume();
         if (mAudioPresenter.onSelfCheckPermissions(PERMISSIONS))
             mAudioPresenter.start();
+        IntentFilter intentFilter = new IntentFilter(Constant.ACTION_SEND_AUDIO);
+        registerReceiver(mAudioReceiver, intentFilter);
     }
+
+    @Override
+    protected void onPause() {
+        unregisterReceiver(mAudioReceiver);
+        super.onPause();
+    }
+
+    private BroadcastReceiver mAudioReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(intent.getAction().equals(Constant.ACTION_SEND_AUDIO)){
+                AudioModel audioModel = intent.getParcelableExtra(Constant.EXTRA_AUDIO);
+                onDisplayPlayingAudio(audioModel);
+            }
+        }
+    };
 }

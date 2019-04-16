@@ -1,6 +1,5 @@
 package com.example.demomp3player.service;
 
-import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -9,11 +8,11 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Build;
+import android.os.CountDownTimer;
 import android.os.IBinder;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.example.demomp3player.R;
@@ -22,13 +21,14 @@ import com.example.demomp3player.ui.screen.audio.AudioListActivity;
 import com.example.demomp3player.util.Constant;
 
 import java.io.IOException;
-import java.util.Objects;
 
-public class PlayAudioService extends Service  {
+public class PlayAudioService extends Service {
 
-
+    private static final String TAG = "PlayAudioService";
     private static final String CHANNEL_ID = "com.example.demomp3player";
+    private static boolean sIsPlaying = false;
     private MediaPlayer mMediaPlayer;
+    private AudioModel mAudioModel;
 
     public PlayAudioService() {
 
@@ -42,15 +42,16 @@ public class PlayAudioService extends Service  {
     }
 
 
-    @TargetApi(Build.VERSION_CODES.O)
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        super.onStartCommand(intent, flags, startId);
-        AudioModel mAudioModel =
-                Objects.requireNonNull(intent.getExtras()).getParcelable(Constant.AUDIO_MESSAGE);
-               playForeground(mAudioModel);
-        return START_STICKY;
+        mAudioModel =
+                intent.getExtras().getParcelable(Constant.EXTRA_AUDIO);
+        onSendBroadcastReceiver(mAudioModel);
+        onPlayAudio(mAudioModel);
+        onPushNotification(mAudioModel);
+
+
+        return START_NOT_STICKY;
     }
 
 
@@ -59,40 +60,37 @@ public class PlayAudioService extends Service  {
         super.onDestroy();
         if (mMediaPlayer != null) mMediaPlayer.release();
     }
-    private void playForeground(AudioModel audioModel) {
 
-        playAudio(audioModel);
-        createNotificationChannel();
-        // Get the layouts to use in the custom notification
+    private void onPushNotification(AudioModel audioModel) {
+
+
+        Intent notificationIntent = new Intent(this, AudioListActivity.class);
+        PendingIntent pendingIntent =
+                PendingIntent.getActivity(this, 0, notificationIntent, 0);
+
+        onCreateNotificationChannel();
+
         RemoteViews notificationLayout
                 = new RemoteViews(getPackageName(), R.layout.notification_audio_player);
-
         notificationLayout.setTextViewText(R.id.text_title, audioModel.getTitle());
         notificationLayout.setTextViewText(R.id.text_artist, audioModel.getArtist());
         notificationLayout.setImageViewResource(R.id.image_control, R.drawable.ic_music_note_24dp);
 
-        Intent intent = new Intent(this, AudioListActivity.class);
-
-        intent.putExtra(Constant.AUDIO_MESSAGE, audioModel);
-
-
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle(getText(R.string.notification_title))
+                .setContentText(getText(R.string.notification_message))
                 .setSmallIcon(R.drawable.ic_music_note_24dp)
                 .setCustomContentView(notificationLayout)
+                .setContentIntent(pendingIntent)
+                .setTicker(getText(R.string.ticker_text))
+                .setPriority(Notification.DEFAULT_ALL)
+                .build();
 
-                .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        NotificationManager notificationManager =
-               (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        Notification notification = builder.build();
-        notificationManager.notify(0, notification);
-
-        startForeground(0, notification);
+        startForeground(3, notification);
     }
 
-    private void playAudio(AudioModel audioModel) {
+    private void onPlayAudio(AudioModel audioModel) {
         if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
             mMediaPlayer.release();
         }
@@ -114,7 +112,7 @@ public class PlayAudioService extends Service  {
     }
 
 
-    private void createNotificationChannel() {
+    private void onCreateNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -132,7 +130,12 @@ public class PlayAudioService extends Service  {
 
     }
 
-
+    private void onSendBroadcastReceiver(AudioModel audioModel) {
+        Intent intent = new Intent();
+        intent.putExtra(Constant.EXTRA_AUDIO, audioModel);
+        intent.setAction(Constant.ACTION_SEND_AUDIO);
+        sendBroadcast(intent);
+    }
 
 
 }

@@ -69,7 +69,7 @@ public class AudioPresenter implements AudioContract.Presenter {
 
     @Override
     public boolean onGetPlayingAudio() {
-        AudioModel audioModel = ((Activity)mContext).getIntent().getExtras().getParcelable(Constant.AUDIO_MESSAGE);
+        AudioModel audioModel = ((Activity)mContext).getIntent().getExtras().getParcelable(Constant.EXTRA_AUDIO);
         if(audioModel == null) return false;
         mAudioContractView.onDisplayPlayingAudio(audioModel);
         return true;
