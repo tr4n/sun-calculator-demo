@@ -4,4 +4,7 @@
     <string name="item_audio_default_artist">Taylor Swift</string>
     <string name="channel_name">Background Service</string>
     <string name="channel_description">Background Service</string>
+    <string name="notification_title">title</string>
+    <string name="notification_message">message</string>
+    <string name="ticker_text">ticker</string>
 </resources>

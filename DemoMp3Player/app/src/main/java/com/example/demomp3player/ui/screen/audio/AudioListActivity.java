@@ -1,14 +1,18 @@
 package com.example.demomp3player.ui.screen.audio;
 
 import android.Manifest;
-import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,16 +25,18 @@ import com.example.demomp3player.util.Constant;
 
 import java.util.List;
 
-public class AudioListActivity extends BaseActivity implements AudioContract.View, AudioAdapter.ItemClickListener {
+public class AudioListActivity extends BaseActivity implements AudioContract.View, AudioAdapter.ItemClickListener, View.OnClickListener {
 
 
     private static final int REQUEST_PERMISSION = 1;
     private static final String[] PERMISSIONS = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
+    private static boolean sIsPlaying = true;
     private RecyclerView mRecyclerAudio;
-    private ImageView mImageStatus;
+    private ImageView mImageController, mImageCancel;
     private TextView mTextTitle, mTextArtist;
     private AudioAdapter mAudioAdapter;
     private AudioPresenter mAudioPresenter;
+    private ConstraintLayout mConstraintPlayingAudio;
 
 
     @Override
@@ -40,17 +46,18 @@ public class AudioListActivity extends BaseActivity implements AudioContract.Vie
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_main;
+        return R.layout.activity_audio_list;
     }
 
     @Override
     protected void initComponent() {
         mAudioPresenter = new AudioPresenter(this);
         mRecyclerAudio = findViewById(R.id.recycler_audio);
-        mImageStatus = findViewById(R.id.image_status);
+        mImageController = findViewById(R.id.image_controller);
         mTextTitle = findViewById(R.id.text_playing_title);
         mTextArtist = findViewById(R.id.text_playing_artist);
-
+        mConstraintPlayingAudio = findViewById(R.id.constraint_playing);
+        mImageCancel = findViewById(R.id.image_playing_cancel);
     }
 
     @Override
@@ -69,6 +76,8 @@ public class AudioListActivity extends BaseActivity implements AudioContract.Vie
         mRecyclerAudio.addItemDecoration(dividerItemDecoration);
         mRecyclerAudio.setLayoutManager(linearLayoutManager);
         mRecyclerAudio.setAdapter(mAudioAdapter);
+        mImageController.setOnClickListener(this);
+        mImageCancel.setOnClickListener(this);
 
     }
 
@@ -90,9 +99,20 @@ public class AudioListActivity extends BaseActivity implements AudioContract.Vie
 
     @Override
     public void onDisplayPlayingAudio(AudioModel audioModel) {
-        mImageStatus.setImageResource(R.drawable.ic_pause_circle_filled_black_24dp);
-        mTextTitle.setText(audioModel.getTitle());
-        mTextArtist.setText(audioModel.getArtist());
+        if (audioModel == null) {
+            mConstraintPlayingAudio.setVisibility(View.GONE);
+            Intent intent = new Intent(this, PlayAudioService.class);
+            stopService(intent);
+        } else {
+            mConstraintPlayingAudio.setVisibility(View.VISIBLE);
+            if (sIsPlaying)
+                mImageController.setImageResource(R.drawable.ic_pause_circle_filled_black_24dp);
+            else
+                mImageController.setImageResource(R.drawable.ic_play_circle_filled_black_24dp);
+            mTextTitle.setText(audioModel.getTitle());
+            mTextArtist.setText(audioModel.getArtist());
+        }
+
 
     }
 
@@ -106,10 +126,19 @@ public class AudioListActivity extends BaseActivity implements AudioContract.Vie
     public void onItemClicked(AudioModel audioModel) {
         final String message = audioModel.getTitle() + "-" + audioModel.getArtist();
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        onDisplayPlayingAudio(audioModel);
-        Intent intent = new Intent(AudioListActivity.this, PlayAudioService.class);
-        intent.putExtra(Constant.AUDIO_MESSAGE, audioModel);
-        startService(intent);
+        onSendRequestService(audioModel, Constant.ACTION_SEND_AUDIO);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.image_controller:
+                onSetStatusPlaying(!sIsPlaying);
+                break;
+            case R.id.image_playing_cancel:
+                onDisplayPlayingAudio(null);
+                break;
+        }
     }
 
     @Override
@@ -117,5 +146,44 @@ public class AudioListActivity extends BaseActivity implements AudioContract.Vie
         super.onResume();
         if (mAudioPresenter.onSelfCheckPermissions(PERMISSIONS))
             mAudioPresenter.start();
+        IntentFilter intentFilter = new IntentFilter(Constant.ACTION_SEND_AUDIO);
+        registerReceiver(mAudioReceiver, intentFilter);
+        onSendRequestService(null, Constant.ACTION_GET_AUDIO);
     }
+
+    @Override
+    protected void onPause() {
+        unregisterReceiver(mAudioReceiver);
+        super.onPause();
+    }
+
+    private void onSendRequestService(AudioModel audioModel, String action) {
+        Intent intent = new Intent(AudioListActivity.this, PlayAudioService.class);
+        intent.putExtra(Constant.EXTRA_ACTION, action);
+        intent.putExtra(Constant.EXTRA_AUDIO, audioModel);
+        startService(intent);
+    }
+
+    private void onSetStatusPlaying(boolean status) {
+        sIsPlaying = status;
+        if (status) {
+            mImageController.setImageResource(R.drawable.ic_pause_circle_filled_black_24dp);
+            onSendRequestService(null, Constant.ACTION_PLAY);
+        } else {
+            mImageController.setImageResource(R.drawable.ic_play_circle_filled_black_24dp);
+            onSendRequestService(null, Constant.ACTION_PAUSE);
+        }
+    }
+
+    private BroadcastReceiver mAudioReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(Constant.ACTION_SEND_AUDIO)) {
+                AudioModel audioModel = intent.getParcelableExtra(Constant.EXTRA_AUDIO);
+                onDisplayPlayingAudio(audioModel);
+            }
+        }
+    };
+
+
 }
