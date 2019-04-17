@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DemoService</string>
+    <string name="notification_title">Title</string>
+    <string name="notification_message">notification message</string>
+    <string name="ticker_text">ticker text</string>
+    <string name="channel_name">com.example.demoservice</string>
+    <string name="channel_description">run service</string>
+</resources>
